@@ -84,7 +84,6 @@ def Marketing_graph():
 
     data = pd.read_csv('MarketingSpend.csv')
     j = data.iloc[0, 0][:-3]
-    print(j)
     lst_sum_off = []
     lst_sum_on = []
     sum_off = 0
@@ -101,8 +100,6 @@ def Marketing_graph():
             j = data.iloc[i, 0][:-3]
     lst_sum_off.append(sum_off)
     lst_sum_on.append(sum_on)
-    print(lst_sum_off)
-    print(lst_sum_on)
 
     months = ('Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь')
     spend_values = {
@@ -134,11 +131,9 @@ def Retail_graph():
     data = pd.read_csv('Retail.csv')
     date_string = data.iloc[0, 1]
     j = datetime.strptime(date_string, "%Y-%m-%d").date()
-    print(j)
     lst_sum_all = []
     sum_per_day = 0
     k = 0
-    print(data.shape[0])
     for i in range(data.shape[0]):
         if str(j) == data.iloc[i, 1]:
             sum_per_day += data.iloc[i, 3]
